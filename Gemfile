@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.0"
 
+gem 'eventmachine', github: "eventmachine/eventmachine", branch: 'master'
+
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.3"
 
@@ -27,6 +30,7 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -49,8 +53,6 @@ gem "sassc-rails"
 # gem "image_processing", "~> 1.2"
 
 
-# Make errors look better
-gem 'better_errors', '~> 2.9.1'
 
 # Adds the bulma.io assets to your pipeline
 gem 'bulma-rails', '~> 0.9.4'
@@ -68,6 +70,9 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
+  # Make errors look better
+  gem 'better_errors', '~> 2.9.1'
+
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
@@ -75,7 +80,7 @@ group :development do
   gem 'guard', '~> 2.18.0'
 
   # Guard gem for livereload
-  gem 'guard-livereload', '~> 2.5.2'
+  gem 'guard-livereload', '~> 2.5', require: false
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
